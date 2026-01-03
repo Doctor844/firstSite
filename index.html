@@ -19,25 +19,6 @@
             background-color: black;
         }
         
-        /* ЧЕРНАЯ ПОЛОСА 5% сверху */
-        .top-black-stripe {
-            height: 5vh; /* 5% высоты экрана */
-            width: 100%;
-            background-color: black;
-            display: flex;
-            align-items: center; /* Вертикальное центрирование */
-            padding-left: 20px; /* Отступ слева */
-            position: relative;
-        }
-        
-        /* Слово "меню" в черной полосе */
-        .menu-text {
-            color: white;
-            font-size: 18px;
-            font-weight: normal;
-            letter-spacing: 2px; /* Расстояние между буквами */
-        }
-        
         .top-section {
             height: 30vh;
             background-image: url('https://doctor844.github.io/firstSite/images/sunset-in-mountain2.jpg');
@@ -62,20 +43,24 @@
             flex: 1;
             background-color: black;
         }
+        
+        /* Для темных картинок - добавляем оверлей */
+        .top-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    <!-- ЧЕРНАЯ ПОЛОСА 5% -->
-    <div class="top-black-stripe">
-        <div class="menu-text">меню</div>
-    </div>
-    
-    <!-- Картинка 30% -->
     <div class="top-section">
         <div class="text-overlay">надпись</div>
     </div>
-    
-    <!-- Остальное черное -->
     <div class="bottom-section"></div>
 </body>
-</html>
+</html> 
