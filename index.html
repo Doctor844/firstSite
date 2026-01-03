@@ -55,12 +55,46 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
+        
+        /* КОНТЕЙНЕР для меню и белой линии */
+        .menu-container {
+            position: absolute;
+            top: 5%; /* 5% отступа сверху картинки */
+            left: 0;
+            width: 15%; /* 15% по горизонтали */
+            height: 2px; /* Высота контейнера для выравнивания */
+            z-index: 3; /* Поверх затемнения */
+            display: flex;
+            align-items: center;
+        }
+        
+        /* БЕЛАЯ ПОЛОСА 1px */
+        .white-line {
+            flex: 1; /* Занимает всё оставшееся пространство */
+            height: 1px;
+            background-color: white;
+            margin-left: 10px; /* Отступ от слова "меню" */
+        }
+        
+        /* Слово "меню" */
+        .menu-text {
+            color: white;
+            font-size: 14px;
+            padding-left: 10px; /* Отступ от края картинки */
+            white-space: nowrap; /* Чтобы текст не переносился */
+        }
     </style>
 </head>
 <body>
     <div class="top-section">
+        <!-- Контейнер с меню и белой линией -->
+        <div class="menu-container">
+            <div class="menu-text">меню</div>
+            <div class="white-line"></div>
+        </div>
+        
         <div class="text-overlay">надпись</div>
     </div>
     <div class="bottom-section"></div>
 </body>
-</html> 
+</html>
