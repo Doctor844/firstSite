@@ -59,29 +59,33 @@
         /* КОНТЕЙНЕР для меню и белой линии */
         .menu-container {
             position: absolute;
-            top: 5%; /* 5% отступа сверху картинки */
+            top: 0;
             left: 0;
             width: 15%; /* 15% по горизонтали */
-            height: 2px; /* Высота контейнера для выравнивания */
-            z-index: 3; /* Поверх затемнения */
+            height: 5%; /* 5% высоты картинки */
+            z-index: 3;
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Вертикальное расположение */
+            justify-content: space-between; /* Меню сверху, линия снизу */
+        }
+        
+        /* Слово "меню" - адаптивный размер */
+        .menu-text {
+            color: white;
+            font-size: calc(5vh * 0.3); /* 30% от 5% высоты картинки */
+            padding-left: 10px;
+            padding-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         /* БЕЛАЯ ПОЛОСА 1px */
         .white-line {
-            flex: 1; /* Занимает всё оставшееся пространство */
+            width: 100%;
             height: 1px;
             background-color: white;
-            margin-left: 10px; /* Отступ от слова "меню" */
-        }
-        
-        /* Слово "меню" */
-        .menu-text {
-            color: white;
-            font-size: 14px;
-            padding-left: 10px; /* Отступ от края картинки */
-            white-space: nowrap; /* Чтобы текст не переносился */
+            margin-bottom: 1px; /* Чтобы линия была точно внизу контейнера */
         }
     </style>
 </head>
