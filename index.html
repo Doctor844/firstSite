@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт с картинкой Яндекс.Диск</title>
+    <title>Сайт с картинкой</title>
     <style>
         * {
             margin: 0;
@@ -16,102 +16,51 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
+            background-color: black;
         }
         
-        .image-section {
-            height: 30vh; /* 30% высоты экрана */
-            background-image: url('https://downloader.disk.yandex.ru/disk/JBzF6R_8Ri5EBQ');
+        .top-section {
+            height: 30vh;
+            background-image: url('https://doctor844.github.io/images/1637848655_13-pibig-info-p-siluet-muzhchini-na-zakate-priroda-krasivo-14.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
-        .image-overlay {
-            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный оверлей */
-            padding: 20px 40px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .image-text {
+        .text-overlay {
             color: white;
-            font-size: 2.5rem;
+            font-size: 48px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            z-index: 2;
         }
         
-        .content-section {
-            flex: 1; /* Занимает оставшиеся 70% */
+        .bottom-section {
+            flex: 1;
             background-color: black;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
         
-        .content-text {
-            font-size: 1.2rem;
-            text-align: center;
-            max-width: 800px;
-        }
-        
-        /* Адаптивность для мобильных */
-        @media (max-width: 768px) {
-            .image-text {
-                font-size: 1.8rem;
-            }
-            
-            .image-overlay {
-                padding: 15px 25px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .image-text {
-                font-size: 1.4rem;
-            }
-            
-            .image-overlay {
-                padding: 10px 20px;
-            }
+        /* Для темных картинок - добавляем оверлей */
+        .top-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <section class="image-section">
-        <div class="image-overlay">
-            <h1 class="image-text">надпись</h1>
-        </div>
-    </section>
-    
-    <section class="content-section">
-        <div class="content-text">
-            <p>Остальные 70% страницы заполнены чёрным фоном.</p>
-            <p>Вы можете добавить сюда любой контент: текст, изображения, формы и т.д.</p>
-        </div>
-    </section>
-
-    <script>
-        // Альтернативный URL на случай блокировки Яндексом
-        const yandexUrl = 'https://downloader.disk.yandex.ru/disk/JBzF6R_8Ri5EBQ';
-        const backupUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'; // Запасная картинка
-        
-        // Проверяем загрузку картинки
-        window.addEventListener('load', function() {
-            const img = new Image();
-            img.src = yandexUrl;
-            
-            img.onerror = function() {
-                // Если картинка с Яндекс.Диска не загрузилась
-                document.querySelector('.image-section').style.backgroundImage = `url(${backupUrl})`;
-                console.log('Используется запасная картинка');
-            };
-        });
-    </script>
+    <div class="top-section">
+        <div class="text-overlay">надпись</div>
+    </div>
+    <div class="bottom-section"></div>
 </body>
 </html>
