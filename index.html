@@ -3,163 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Ваше Имя] — [Ваша Специализация]</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Сайт с картинкой Яндекс.Диск</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-section {
+            height: 30vh; /* 30% высоты экрана */
+            background-image: url('https://downloader.disk.yandex.ru/disk/JBzF6R_8Ri5EBQ');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный оверлей */
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .image-text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .content-section {
+            flex: 1; /* Занимает оставшиеся 70% */
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .content-text {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .image-text {
+                font-size: 1.8rem;
+            }
+            
+            .image-overlay {
+                padding: 15px 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-text {
+                font-size: 1.4rem;
+            }
+            
+            .image-overlay {
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Навигация -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">[Ваше Имя]</a>
-            <div class="nav-links">
-                <a href="#about">Обо мне</a>
-                <a href="#stack">Стек</a>
-                <a href="#projects">Проекты</a>
-                <a href="#contact">Контакты</a>
-            </div>
+    <section class="image-section">
+        <div class="image-overlay">
+            <h1 class="image-text">надпись</h1>
         </div>
-    </nav>
-
-    <!-- Hero секция -->
-    <section class="hero" id="about">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Привет, я <span class="highlight">[Ваше Имя]</span></h1>
-                <h2>[Frontend/Backend/Fullstack] разработчик</h2>
-                <p class="tagline">Ищу позицию [Junior/Middle/Senior] в продуктовой компании/стартапе</p>
-                <p>Специализируюсь на [ваша специализация, например: создании быстрых веб-приложений на React]. Готов решать сложные задачи и быстро учиться новому.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn">Смотреть проекты</a>
-                    <a href="#contact" class="btn secondary">Предложить работу</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Ваше фото или аватар -->
-                <div class="avatar">👨‍💻</div>
-            </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="content-text">
+            <p>Остальные 70% страницы заполнены чёрным фоном.</p>
+            <p>Вы можете добавить сюда любой контент: текст, изображения, формы и т.д.</p>
         </div>
     </section>
 
-    <!-- Стек технологий -->
-    <section class="stack" id="stack">
-        <div class="container">
-            <h2>Мой технологический стек</h2>
-            <div class="stack-grid">
-                <div class="stack-category">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">SASS</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">MongoDB</span>
-                    </div>
-                </div>
-                <div class="stack-category">
-                    <h3><i class="fas fa-tools"></i> Инструменты</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Webpack</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Jest</span>
-                        <span class="tech-tag">AWS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Проекты -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2>Мои проекты</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Pet-проект: Интернет-магазин</h3>
-                        <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <p>Полнофункциональный магазин с корзиной, фильтрами и панелью администратора.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-                <!-- Добавьте еще 2-3 проекта -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты и Telegram-бот -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Свяжитесь со мной</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Ищу интересные предложения:</h3>
-                    <ul>
-                        <li><strong>Позиция:</strong> [Junior/Middle/Senior] Developer</li>
-                        <li><strong>Формат:</strong> Офис/Удалёнка/Гибрид</li>
-                        <li><strong>Занятость:</strong> Полная/Частичная</li>
-                        <li><strong>Релокация:</strong> [Возможна/Рассмотрю]</li>
-                    </ul>
-                    
-                    <div class="direct-contacts">
-                        <h4>Прямые контакты:</h4>
-                        <a href="mailto:ваш@email.com" class="contact-link">
-                            <i class="fas fa-envelope"></i> ваш@email.com
-                        </a>
-                        <a href="https://t.me/ваш_телеграм" class="contact-link">
-                            <i class="fab fa-telegram"></i> @ваш_телеграм
-                        </a>
-                        <a href="https://github.com/ваш_гитхаб" class="contact-link">
-                            <i class="fab fa-github"></i> ваш_гитхаб
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="telegram-bot">
-                    <div class="bot-header">
-                        <i class="fab fa-telegram bot-icon"></i>
-                        <h3>Telegram-бот для работодателей</h3>
-                    </div>
-                    <p class="bot-description">
-                        Нажмите кнопку ниже, чтобы быстро отправить вакансию. 
-                        Бот задаст ключевые вопросы и сразу отправит мне информацию.
-                    </p>
-                    <a href="https://t.me/ваш_бот" class="bot-button" target="_blank">
-                        <i class="fab fa-telegram"></i> Открыть бота в Telegram
-                    </a>
-                    <p class="bot-note">Работает 24/7. Отвечу в течение 24 часов.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2024 [Ваше Имя]. Ищу интересную работу в разработке.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        // Альтернативный URL на случай блокировки Яндексом
+        const yandexUrl = 'https://downloader.disk.yandex.ru/disk/JBzF6R_8Ri5EBQ';
+        const backupUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'; // Запасная картинка
+        
+        // Проверяем загрузку картинки
+        window.addEventListener('load', function() {
+            const img = new Image();
+            img.src = yandexUrl;
+            
+            img.onerror = function() {
+                // Если картинка с Яндекс.Диска не загрузилась
+                document.querySelector('.image-section').style.backgroundImage = `url(${backupUrl})`;
+                console.log('Используется запасная картинка');
+            };
+        });
+    </script>
 </body>
 </html>
