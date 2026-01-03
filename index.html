@@ -54,26 +54,29 @@
             z-index: 3;
             display: flex;
             flex-direction: column; /* Вертикальное расположение */
-            justify-content: space-between; /* Меню сверху, линия снизу */
         }
         
-        /* Слово "меню" - адаптивный размер */
+        /* Слово "меню" - ПОСЕРЕДИНЕ контейнера */
         .menu-text {
             color: white;
-            font-size: calc(5vh * 0.3); /* 30% от 5% высоты картинки */
-            padding-left: 10px;
-            padding-top: 2px;
+            font-size: calc(10vh * 0.15); /* 15% от 10% высоты картинки */
+            position: absolute;
+            top: 50%; /* Посередине по вертикали */
+            left: 10px; /* Отступ слева */
+            transform: translateY(-50%); /* Центрирование */
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            margin: 0;
+            padding: 0;
         }
         
-        /* БЕЛАЯ ПОЛОСА 1px */
+        /* БЕЛАЯ ПОЛОСА 1px - ВНИЗУ контейнера */
         .white-line {
+            position: absolute;
+            bottom: 0; /* В самом низу контейнера */
+            left: 0;
             width: 100%;
             height: 1px;
             background-color: white;
-            margin-bottom: 1px; /* Чтобы линия была точно внизу контейнера */
         }
     </style>
 </head>
