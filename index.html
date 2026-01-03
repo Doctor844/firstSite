@@ -31,6 +31,24 @@
             position: relative;
         }
         
+        /* ГРАДИЕНТ поверх картинки */
+        .top-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Плавный градиент от светлого к темному */
+            background: linear-gradient(
+                90deg,
+                rgba(68, 92, 92, 0.6) 0%,    /* #445c5c с прозрачностью */
+                rgba(68, 92, 92, 0.8) 50%,   /* основной */
+                rgba(46, 67, 67, 0.9) 100%   /* темнее */
+            );
+            z-index: 1;
+        }
+        
         .text-overlay {
             color: white;
             font-size: 48px;
@@ -42,18 +60,6 @@
         .bottom-section {
             flex: 1;
             background-color: black;
-        }
-        
-        /* Для темных картинок - добавляем оверлей */
-        .top-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
         }
     </style>
 </head>
